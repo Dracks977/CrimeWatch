@@ -1,6 +1,6 @@
-# {{ name }}
+# CrimeWatch
 
-> {{ description }}
+> CrimeWatch
 
 ## Build Setup
 

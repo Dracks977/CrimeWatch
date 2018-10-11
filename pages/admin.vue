@@ -1,6 +1,6 @@
 <template>
-	<section v-if='user && user.rank && user.rank == "Chef de la police"' class="toped">
-		<div>
+	<section  class="toped">
+		<div v-if='user && user.rank && user.rank == "Chef de la police"'>
 			<vue-good-table
 			:columns="columns"
 			:rows="rows"

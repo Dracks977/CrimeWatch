@@ -108,7 +108,7 @@
         <div class="form-group">
           <div @click='submit()' class="btn btn-primary btn-block"> Create Account  </div>
         </div> <!-- form-group// -->      
-        <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+        <p class="text-center">Have an account? <router-link :to="'/login'">Log In</router-link> </p>                                                                 
       </form>
     </article>
   </div> <!-- card.// -->
@@ -151,6 +151,9 @@
 .container {
   margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
   transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+body {
+  background-image: url('~assets/gplaypattern.png');
 }
 </style>
 

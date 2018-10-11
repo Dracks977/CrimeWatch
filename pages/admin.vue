@@ -1,5 +1,5 @@
 <template>
-	<section class="toped">
+	<section v-if='user && user.rank && user.rank == "Chef de la police"' class="toped">
 		<div>
 			<vue-good-table
 			:columns="columns"
@@ -54,6 +54,15 @@ tbody td {
 					window.alert(e)
 				})
 				
+			}
+		},
+		computed: {
+			user () { 
+				if (process.browser && localStorage.getItem('vuex')) {
+					let user = JSON.parse(localStorage.getItem('vuex'))
+					return user.user
+				}
+				return null
 			}
 		},
 		data(){

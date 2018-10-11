@@ -11,20 +11,20 @@
             </div>
             <input v-model='form.email' class="form-control" placeholder="Email address" type="email">
           </div> <!-- form-group// -->
-         <div class="form-group input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-          </div>
-          <input v-model='form.password' class="form-control" placeholder="password" type="password">
-        </div> <!-- form-group// -->                                   
-        <div class="form-group">
-          <div @click='submit()' class="btn btn-primary btn-block"> Login  </div>
-        </div> <!-- form-group// -->      
-        <p class="text-center">You don't have an account? <router-link :to="'/'">Register</router-link> </p>                                                                 
-      </form>
-    </article>
-  </div> <!-- card.// -->
-</section>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input v-model='form.password' class="form-control" placeholder="password" type="password">
+          </div> <!-- form-group// -->                                   
+          <div class="form-group">
+            <div @click='submit()' class="btn btn-primary btn-block"> Login  </div>
+          </div> <!-- form-group// -->      
+          <p class="text-center">You don't have an account? <router-link :to="'/'">Register</router-link> </p>                                                                 
+        </form>
+      </article>
+    </div> <!-- card.// -->
+  </section>
 </template>
 
 <script>
@@ -45,13 +45,25 @@
     methods: {
       submit() {
         this.$axios.post('http://localhost:8000/api/members',this.form).then(response => {
-          alert(response.data)
-        }).catch(e => {
-          alert(e)
-        })
-      }
-    }
-  }
+         this.$store.commit('SET_USER', response.data)
+         window.alert(response.data)
+       }).catch(e => {
+       //  this.$store.commit('SET_USER',  {
+       //   "id": 1,
+       //   "name": "DUQUESNE",
+       //   "firstname": "Florian",
+       //   "email": "",
+       //   "rank": "Chef de la police",
+       //   "seniority": "2010",
+       //   "activated": "no",
+       //   "created_at": "2018-10-08 20:59:10",
+       //   "updated_at": "2018-10-08 20:59:10"
+       // },)
+       window.alert(e)
+      })
+     }
+   }
+ }
 </script>
 
 <style>

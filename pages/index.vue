@@ -138,9 +138,9 @@
     methods: {
       submit() {
         this.$axios.post('http://localhost:8000/api/members',this.form).then(response => {
-          alert(response.data)
+          window.alert(response.data)
         }).catch(e => {
-          alert(e)
+          window.alert(e)
         })
       }
     }

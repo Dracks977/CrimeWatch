@@ -44,11 +44,16 @@ tbody td {
 				this.$axios.get('http://localhost:8000/api/members').then(response => {
 					this.rows = response.date
 				}).catch(e => {
-					alert(e)
+					window.alert(e)
 				})
 			},
 			approuve(client) {
-				client.activated = 'yes'
+				this.$axios.put('http://localhost:8000/api/members/' + client.id, {activated : 'yes'}).then((response) => {
+					client.activated = 'yes'
+				}).catch((e) => {
+					window.alert(e)
+				})
+				
 			}
 		},
 		data(){

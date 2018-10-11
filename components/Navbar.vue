@@ -6,7 +6,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
+				<li v-if='user && user.rank && user.rank == "Chef de la police"' class="nav-item">
 					<a class="nav-link" href="/admin">Admin</a>
 				</li>
 				<li class="nav-item">
@@ -23,3 +23,17 @@
 		</div>
 	</nav>
 </template>
+<script type="text/javascript">
+	export default {
+		computed: {
+			user () { 
+				if (process.browser && localStorage.getItem('vuex')) {
+					let user = JSON.parse(localStorage.getItem('vuex'))
+					return user.user
+				}
+				return null
+			}
+		},
+	}
+
+</script>

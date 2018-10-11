@@ -132,30 +132,30 @@ tbody td {
 				  ],
 				  //pensez a l'enlever
 				  rows: [
-				  {
-				  	"id": 1,
-				  	"name": "DUQUESNE",
-				  	"firstname": "Florian",
-				  	"password": "test",
-				  	"email": "",
-				  	"rank": "agent",
-				  	"seniority": "2010",
-				  	"activated": "no",
-				  	"created_at": "2018-10-08 20:59:10",
-				  	"updated_at": "2018-10-08 20:59:10"
-				  },
-				  {
-				  	"id": 2,
-				  	"name": "DUQUESNE",
-				  	"firstname": "Florian",
-				  	"password": "test",
-				  	"email": "test@email.com",
-				  	"rank": "agent",
-				  	"seniority": "2010",
-				  	"activated": "no",
-				  	"created_at": "2018-10-08 21:00:44",
-				  	"updated_at": "2018-10-08 21:00:44"
-				  }
+				  // {
+				  // 	"id": 1,
+				  // 	"name": "DUQUESNE",
+				  // 	"firstname": "Florian",
+				  // 	"password": "test",
+				  // 	"email": "",
+				  // 	"rank": "agent",
+				  // 	"seniority": "2010",
+				  // 	"activated": "no",
+				  // 	"created_at": "2018-10-08 20:59:10",
+				  // 	"updated_at": "2018-10-08 20:59:10"
+				  // },
+				  // {
+				  // 	"id": 2,
+				  // 	"name": "DUQUESNE",
+				  // 	"firstname": "Florian",
+				  // 	"password": "test",
+				  // 	"email": "test@email.com",
+				  // 	"rank": "agent",
+				  // 	"seniority": "2010",
+				  // 	"activated": "no",
+				  // 	"created_at": "2018-10-08 21:00:44",
+				  // 	"updated_at": "2018-10-08 21:00:44"
+				  // }
 				  ],
 				}
 			}

@@ -26,16 +26,16 @@
 						<input v-model='form.weapontype' class="form-control" placeholder="weapontype" type="text">
 					</div> <!-- form-group// -->
 					<div class="form-group input-group">
-						 <select   v-model='form.shooting' class="form-control">
-						 	<option disabled value="">shooting</option>
-						 	<option> true </option>
-						 	<option> false </option>
-						 </select>
-						 	 <select  v-model='form.domestic' class="form-control">
-						 	<option disabled value="">domestic</option>
-						 	<option> true </option>
-						 	<option> false </option>
-						 </select>
+						<select   v-model='form.shooting' class="form-control">
+							<option disabled value="">shooting</option>
+							<option> true </option>
+							<option> false </option>
+						</select>
+						<select  v-model='form.domestic' class="form-control">
+							<option disabled value="">domestic</option>
+							<option> true </option>
+							<option> false </option>
+						</select>
 					</div> <!-- form-group// -->
 					<div class="form-group input-group">
 						<input v-model='form.shift' class="form-control" placeholder="shift" type="text">
@@ -104,7 +104,9 @@
 		methods: {
 			submit() {
 				this.$axios.post('http://localhost:3100/crimes',this.form).then(response => {
-					this.form = null
+					this.$router.push({
+						path: '/dashbord'
+					})
 				}).catch(e => {
 					console.log(e)
 				})

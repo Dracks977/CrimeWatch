@@ -47,7 +47,7 @@
          if (response.data[0].activated) {
           this.$store.commit('SET_USER', response.data[0])
           this.$router.push({
-            path: '/dashbord'
+            path: '/crimes/search'
           })
          } else {
           console.log('activate account first')

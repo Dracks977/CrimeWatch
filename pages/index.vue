@@ -138,13 +138,18 @@
     methods: {
       submit() {
         this.$axios.post('http://localhost:8000/api/members',this.form).then(response => {
-          window.alert(response.data)
-        }).catch(e => {
-          window.alert(e)
-        })
-      }
+         this.$store.commit('SET_USER', response.data)
+         if (response.data.id) {
+          this.$router.push({
+            path: '/dashbord'
+          })
+        }
+      }).catch(e => {
+        window.alert(e)
+      })
     }
   }
+}
 </script>
 
 <style>

@@ -112,7 +112,7 @@ tbody td {
 				this.$refs.myModalRef.hide()
 			},
 			submit() {
-				this.$axios.get('http://localhost:3100/crimes', {params: this.search}).then(response => {
+				this.$axios.get('http://localhost:8200/search', {params: this.search}).then(response => {
 					console.log(response)
 					this.rows = response.data
 				}).catch(e => {

@@ -44,8 +44,9 @@
     methods: {
       submit() {
         this.$axios.post('http://localhost:8000/api/login',this.form).then(response => {
-         this.$store.commit('SET_USER', response.data)
+         console.log(response)
          if (response.data.activated) {
+          this.$store.commit('SET_USER', response.data)
           this.$router.push({
             path: '/dashbord'
           })

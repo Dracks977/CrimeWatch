@@ -45,21 +45,23 @@
       submit() {
         this.$axios.post('http://localhost:8000/api/login',this.form).then(response => {
          this.$store.commit('SET_USER', response.data)
+         if (response.data.activated){
           this.$router.push({
             path: '/dashbord'
           })
+         }
       }).catch(e => {
-        this.$store.commit('SET_USER',  {
-         "id": 1,
-         "name": "DUQUESNE",
-         "firstname": "Florian",
-         "email": "",
-         "rank": "Chef de la police",
-         "seniority": "2010",
-         "activated": "no",
-         "created_at": "2018-10-08 20:59:10",
-         "updated_at": "2018-10-08 20:59:10"
-       },)
+       //  this.$store.commit('SET_USER',  {
+       //   "id": 1,
+       //   "name": "DUQUESNE",
+       //   "firstname": "Florian",
+       //   "email": "",
+       //   "rank": "Chef de la police",
+       //   "seniority": "2010",
+       //   "activated": "no",
+       //   "created_at": "2018-10-08 20:59:10",
+       //   "updated_at": "2018-10-08 20:59:10"
+       // },)
        console.log(e)
      })
     }

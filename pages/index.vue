@@ -138,7 +138,6 @@
     methods: {
       submit() {
         this.$axios.post('http://localhost:8000/api/members',this.form).then(response => {
-         this.$store.commit('SET_USER', response.data)
          if (response.data) {
           this.$router.push({
             path: '/login'

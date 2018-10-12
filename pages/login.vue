@@ -45,10 +45,12 @@
       submit() {
         this.$axios.post('http://localhost:8000/api/login',this.form).then(response => {
          this.$store.commit('SET_USER', response.data)
-         if (response.data.activated){
+         if (response.data.activated) {
           this.$router.push({
             path: '/dashbord'
           })
+         } else {
+          console.log('activate account first')
          }
       }).catch(e => {
        //  this.$store.commit('SET_USER',  {

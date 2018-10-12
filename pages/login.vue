@@ -20,7 +20,6 @@
           <div class="form-group">
             <div @click='submit()' class="btn btn-primary btn-block"> Login  </div>
           </div> <!-- form-group// -->      
-          <p class="text-center">You don't have an account? <router-link :to="'/'">Register</router-link> </p>                                                                 
         </form>
       </article>
     </div> <!-- card.// -->
@@ -52,18 +51,18 @@
           })
         }
       }).catch(e => {
-       //  this.$store.commit('SET_USER',  {
-       //   "id": 1,
-       //   "name": "DUQUESNE",
-       //   "firstname": "Florian",
-       //   "email": "",
-       //   "rank": "Chef de la police",
-       //   "seniority": "2010",
-       //   "activated": "no",
-       //   "created_at": "2018-10-08 20:59:10",
-       //   "updated_at": "2018-10-08 20:59:10"
-       // },)
-       window.alert(e)
+        this.$store.commit('SET_USER',  {
+         "id": 1,
+         "name": "DUQUESNE",
+         "firstname": "Florian",
+         "email": "",
+         "rank": "Chef de la police",
+         "seniority": "2010",
+         "activated": "no",
+         "created_at": "2018-10-08 20:59:10",
+         "updated_at": "2018-10-08 20:59:10"
+       },)
+       console.log(e)
      })
     }
   }

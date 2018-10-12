@@ -12,8 +12,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/dashbord">Dashbord</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/crime/add">Add crime</a>
+				<li v-if='user && user.rank && user.rank !== "Agent"' class="nav-item">
+					<a class="nav-link" href="/crimes/add">Add crime</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">

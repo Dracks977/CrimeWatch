@@ -106,13 +106,12 @@ tbody td {
 
 	export default {
 		created () {
-			this.fetchData()
 		},
 		methods: {
 			hideModal () {
 				this.$refs.myModalRef.hide()
 			},
-			fetchData() {
+			submit() {
 				this.$axios.get('http://localhost:3100/crimes', {params: this.search}).then(response => {
 					console.log(response)
 					this.rows = response.data

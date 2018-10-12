@@ -68,9 +68,9 @@ tbody td {
 			},
 			fetchData() {
 				this.$axios.get('http://localhost:3100/crimes').then(response => {
-					this.rows = response.date
+					this.rows = response.data
 				}).catch(e => {
-					window.alert(e)
+					console.log(e)
 				})
 			},
 			show(client) {

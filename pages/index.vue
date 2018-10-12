@@ -15,7 +15,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
-            <input v-model='form.surname' class="form-control" placeholder="surname" type="text">
+            <input v-model='form.firstname' class="form-control" placeholder="surname" type="text">
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -123,7 +123,7 @@
       return {
         form : {
           name : '',
-          surname : '',
+          firstname  : '',
           email : '',
           rank : 'Agent',
           seniority : '1963',
@@ -145,7 +145,7 @@
           })
         }
       }).catch(e => {
-        window.alert(e)
+        console.log(e)
       })
     }
   }

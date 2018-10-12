@@ -17,10 +17,7 @@
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search crime" aria-label="Search">
-				<div class="btn btn-outline-success my-2 my-sm-0">Search</div>
-				<div style="width: 10px"></div>
-				<a class="form-control btn btn-outline-success my-2 my-sm-0" href="/crimes/search">Advanced Search</a>
+				<a class="form-control btn btn-outline-success my-2 my-sm-0" href="/crimes/search">Search</a>
 			</form>
 		</div>
 	</nav>

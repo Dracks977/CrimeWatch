@@ -1,5 +1,51 @@
 <template>
 	<section  class="toped">
+		<div class="card bg-light">
+			<article class="card-body mx-auto" >
+				<form>
+					<div class="form-group input-group">
+						<input v-model='search.naturecode' class="form-control" placeholder="naturecode" type="text">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<input v-model='search.incident_type_description' class="form-control" placeholder="incident_type_description" type="text">
+					</div> <!-- form-group// -->   
+					<div class="form-group input-group">
+						<input v-model='search.main_crimecode' class="form-control" placeholder="main_crimecode" type="text">
+					</div> <!-- form-group// -->       
+					<div class="form-group input-group">
+						<input v-model='search.reptdistrict' class="form-control" placeholder="reptdistrict" type="text">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<input v-model='search.weapontype' class="form-control" placeholder="weapontype" type="text">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<select   v-model='search.shooting' class="form-control">
+							<option disabled value="">shooting</option>
+							<option> true </option>
+							<option> false </option>
+						</select>
+						<select  v-model='search.domestic' class="form-control">
+							<option disabled value="">domestic</option>
+							<option> true </option>
+							<option> false </option>
+						</select>
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<input v-model='search.shift' class="form-control" placeholder="shift" type="text">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<input v-model='search.ucrpart' class="form-control" placeholder="ucrpart" type="text">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<input v-model='search.streetname' class="form-control" placeholder="streetname" type="text">
+						<input v-model='search.xstreetname' class="form-control" placeholder="xstreetname" type="text">
+					</div> <!-- form-group// -->                     
+					<div class="form-group">
+						<div @click='submit()' class="btn btn-primary btn-block"> Submit  </div>
+					</div> <!-- form-group// -->                                                      
+				</form>
+			</article>
+		</div> <!-- card.// -->
 		<div v-if='user && user.rank'>
 			<vue-good-table
 			:columns="columns"
@@ -91,6 +137,19 @@ tbody td {
 		data(){
 			return {
 				modal : [{}],
+				search : {
+				  	"naturecode": null,
+				  	"incident_type_description": null,
+				  	"main_crimecode": null,
+				  	"reptdistrict": null,
+				  	"weapontype": null,
+				  	"shooting": '',
+				  	"domestic": '',
+				  	"shift": null,
+				  	"ucrpart": null,
+				  	"streetname": null,
+				  	"xstreetname": null
+				},
 				columns: [
 				{
 					label: 'Compnos',

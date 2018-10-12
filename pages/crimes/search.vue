@@ -113,8 +113,9 @@ tbody td {
 				this.$refs.myModalRef.hide()
 			},
 			fetchData() {
-				this.$axios.get('http://localhost:3100/crimes').then(response => {
-					this.rows = response.date
+				this.$axios.get('http://localhost:3100/crimes', {params: this.search}).then(response => {
+					console.log(response)
+					this.rows = response.data
 				}).catch(e => {
 					console.log(e)
 				})
